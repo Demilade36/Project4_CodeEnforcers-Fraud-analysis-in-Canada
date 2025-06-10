@@ -32,40 +32,36 @@ This project leverages **machine learning** to classify fraud vs. non-fraud case
 
 ---
 
-## 🌐 Data Source Access 
-
-Retrieved fraud report data directly from the [Canada’s Open Government Portal-Canadian Anti-Fraud Centre Fraud Reporting Data (2021-2025)](https://open.canada.ca/data/en/dataset/6a09c998-cddb-4a22-beff-4dca67ab892f) using their public API.
-
-
 ### 🗃️ Dataset  Overview
 **Source :** Retrieved fraud report data directly from the [Canada’s Open Government Portal-Canadian Anti-Fraud Centre Fraud Reporting Data (2021-2025)](https://open.canada.ca/data/en/dataset/6a09c998-cddb-4a22-beff-4dca67ab892f) using their public API.
 
 The dataset includes case-level fraud details with demographic, financial, and geographic attributes.
 
-| Feature              | Description                                                       |
-|----------------------|-------------------------------------------------------------------|
-| `Number ID`          | Unique case ID                                                    |
-| `Date Received`      | Complaint filing date                                             |
-| `Province`           | Canadian province where reported                                  |
-| `Complaint Type`     | 1 = Fraud, 0 = Attempt/Other/Unknown                              |
-| `Gender`             | Male, Female, Prefer not to say, Not Available                    |
-| `Victim Age Range`   | Age group (e.g., 20–29, 30-39, 60-69)                             |
-| `Fraud Category`     | Scam type: investment, merchandise, romance, etc.                |
-| `Solicitation Method`| Contact method: phone, email, social media, etc.                 |
-| `Number of Victims`  | 1 = Victim, 0 = Non-victim (used as the target column)            |
-| `Dollar Loss`        | Reported financial loss (if any)                                  |
+| Feature              | Description                                                   |
+|----------------------|---------------------------------------------------------------|
+| `Number ID`          | Unique case ID                                                |
+| `Date Received`      | Complaint filing date                                         |
+| `Province`           | Canadian province where reported                              |
+| `Complaint Type`     | 1 = Fraud, 0 = Attempt/Other/Unknown                          |
+| `Gender`             | Male, Female, Prefer not to say, Not Available                |
+| `Victim Age Range`   | Age group (e.g., 20–29, 30-39, 60-69)                         |
+| `Fraud Category`     | Scam type: investment, merchandise, romance, etc.             |
+| `Solicitation Method`| Contact method: phone, email, social media, etc.              |
+| `Number of Victims`  | 1 = Victim, 0 = Non-victim **(used as the target column)**    |
+| `Dollar Loss`        | Reported financial loss (if any)                              |
+---
 
+## ⚙️ Methodology & Tools:
 
-## ⚙️ Methodology & Tools  
-
-| Stage               | Description                                                          |
-|---------------------|----------------------------------------------------------------------|
-| Cleaning & Filtering| Removed missing values, filtered for Canada-only                     |
-| Encoding            | Label encoding for model-ready categorical features                  |
-| Database            | SQLite3 used for querying and storage                                |
-| Modeling            | Scikit-learn (Random Forest & K-Nearest Neighbors (KNN) classifiers) |
-| Visualization       | Used Matplotlib for bar charts, pie charts and trend visuals         |
-| Evaluation          | Metrics include Accuracy, Precision, Recall, and F1 Score            |
+| **Stage**            | **Description**                                                                    | **Tools / Libraries Used** |
+| -------------------- | ---------------------------------------------------------------------------------- | -------------------------- |
+| Cleaning & Filtering | Removed missing values; filtered data for Canada-only                              | `pandas`, `numpy`          |
+| Encoding             | Applied label encoding to categorical features for model compatibility             | `scikit-learn`             |
+| Database             | Used SQLite3 for data querying and storage                                         | `sqlite3`, `json`          |
+| Modeling             | Random Forest and K-Nearest Neighbors (KNN) classifiers                            | `scikit-learn`             |
+| Evaluation           | Measured performance using Accuracy, Precision, Recall, and F1 Score               | `scikit-learn`             |
+| Visualization        | Created bar charts, pie charts, and trend visuals to illustrate key patterns       | `matplotlib`               |
+| Data Fetching        | Retrieved data via API and managed request timing                                  | `urllib`, `time`           |
 
 ---
 
@@ -104,16 +100,12 @@ Decision Boundary of Fraud Detection Model://github.com/your-username/your-repo/
 
 ---
 
-
 ## 📈 Model Performance 
 
 | Model                         | Dataset                    | Accuracy | Precision | Recall | F1 Score |
 |-------------------------------|----------------------------|----------|-----------|--------|----------|
 | Random Forest Classifier      | Fraud vs. No Fraud         | 89%      | 87%       | 86%    | 86.5%    |
 | K Neighbors Classifier (K=15) | Fraud vs. No Fraud         | 83%      | 81%       | 79%    | 80%      |
-
-
-
 ---
 
 ## 🧑‍💼 Stakeholder Impact
@@ -124,7 +116,6 @@ Decision Boundary of Fraud Detection Model://github.com/your-username/your-repo/
 | Financial Institutions | Enhance fraud risk scoring and alert systems                      |
 | Public & Media      | Inform campaigns based on fraud type, method, and geography            |
 | Policy Makers       | Use data to allocate resources and design education initiatives        |
-
 ---
 
 ## 📁 Project Structure
@@ -140,18 +131,6 @@ Project4_CodeEnforcers-Fraud-analysis-in-Canada/
 └── README.md                   # Executive summary and documentation
 ```
 
----`
-
-## 🛠️ Libraries Used
-
-* **scikit-learn** – Machine learning (data prep, modeling, evaluation)
-* **matplotlib** – Plotting graphs
-* **pandas, numpy** – Data handling and math
-* **sqlite3, json** – Database and data parsing
-* **urllib, time** – Data fetching and timing
-
----
-
 ## 🛠️ Installation & Setup
 
 ### 1. Clone the Repository
@@ -162,7 +141,6 @@ cd Project4_CodeEnforcers-Fraud-analysis-in-Canada
 ```
 
 ---
-
 ### 2. Install Required Python Libraries
 
 Make sure you have **Python 3.9+** and **pip** installed. Then run:
@@ -170,7 +148,6 @@ Make sure you have **Python 3.9+** and **pip** installed. Then run:
 ```bash
 pip install pandas numpy matplotlib scikit-learn
 ```
-
 ---
 
 ## 🚧 Dataset Limitations
@@ -181,7 +158,6 @@ pip install pandas numpy matplotlib scikit-learn
 * **Geographic Bias:** Ontario dominates reports due to population density
 
 ---
-
 ## 🧭 Ethical Considerations
 
 * No personal identifiers included
@@ -189,26 +165,8 @@ pip install pandas numpy matplotlib scikit-learn
 * Respect for data privacy and contextual sensitivity around victimization
 
 ---
-
-## 🙌 Team – Group 4: *The Code Enforcers*
-
-* **Eder Ortiz** – data cleaning, database setup, model development, metric analysis
-* **Oludemilade Adenuga** – model development, metric analysis, and documentation
-* **Geraldine Valencia** – visualization, data evaluation, and documentation
-
----
-
 ## 📚 References
 
-* **Data Source:** [Canadian Anti-Fraud Centre – Open Canada](https://open.canada.ca)
-* **scikit-learn Documentation:** [https://scikit-learn.org](https://scikit-learn.org)
-* **Matplotlib Documentation:** [https://matplotlib.org](https://matplotlib.org)
-* **SQLite3 Documentation:** [Python SQLite3 Module](https://docs.python.org/3/library/sqlite3.html)
-
-
-
-
-* **Data Source:** [Canadian Anti-Fraud Centre – Open Canada](https://open.canada.ca/data/en/dataset/6a09c998-cddb-4a22-beff-4dca67ab892f)
 * **scikit-learn Documentation:** [https://scikit-learn.org](https://scikit-learn.org)
 * **Matplotlib Documentation:** [https://matplotlib.org](https://matplotlib.org)
 * **pandas Documentation:** [https://pandas.pydata.org](https://pandas.pydata.org)
@@ -217,17 +175,11 @@ pip install pandas numpy matplotlib scikit-learn
 * **JSON Module:** [https://docs.python.org/3/library/json.html](https://docs.python.org/3/library/json.html)
 * **urllib Module:** [https://docs.python.org/3/library/urllib.html](https://docs.python.org/3/library/urllib.html)
 * **time Module:** [https://docs.python.org/3/library/time.html](https://docs.python.org/3/library/time.html)
-```
-
-Let me know if you'd like to include your GitHub repo or API usage examples as well.
-
-Let me know if you’d like to add API-specific references (e.g., a sample URL or code snippet for fetching fraud data).
 
 ---
+## 🙌 Team – Group 4: *The Code Enforcers*
 
-> “We use models to predict fraud, but the mission is always about protecting people.”
-> – *The Code Enforcers*
-
-```
-
-
+* **Eder Ortiz** – data cleaning, database setup, model development, metric analysis
+* **Oludemilade Adenuga** – model development, metric analysis, and documentation
+* **Geraldine Valencia** – visualization, data evaluation, and documentation
+---
