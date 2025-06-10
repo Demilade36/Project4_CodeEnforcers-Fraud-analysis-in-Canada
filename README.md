@@ -51,7 +51,14 @@ The dataset includes case-level fraud details with demographic, financial, and g
 ---
 
 ## 🎯 Key Findings  
+### Fraud vs No Fraud Cases
   <img src="./Plot/Fraud%20vs%20No%20Fraud%20Cases.png" alt="Fraud vs No Fraud Cases" width="400"/>
+
+### Victims of Fraud by Province
+  <img src="./Plot/Victims%20by%20Province.png" alt="Victims by Province" width="400"/>
+
+### Victims of Fraud by Age range
+  <img src="./Plot/Victims%20by%20Age%Range.png" alt="Victims by Age Range" width="400"/>
 
 
 ### 💰 Financial Impact Trends:
