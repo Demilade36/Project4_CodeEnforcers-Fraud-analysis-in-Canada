@@ -93,6 +93,12 @@ The dataset includes case-level fraud details with demographic, financial, and g
 | **No Fraud (0)**    | 13,762 (TN)  |  2,018 (FP) |   | **No Fraud (0)**    | 13,280 (TN)  |  2,500 (FP) |
 | **Fraud (1)**       |  3,959 (FN)  | 30,077 (TP) |   | **Fraud (1)**       |  4,090 (FN)  | 29,946 (TP) |
 
+#### Rando Forest Confusion Matrix
+  <img src="./Plot/Confusion%20Matrix.png" alt="Confusion Matrix" width="400"/>
+
+#### KNN Confusion Matrix - Optimization
+  <img src="./Plot/KNN%20-%20Confusion%20Matrix%20opt.png" alt="KNN Confusion Matrix - Optimization" width="400"/>
+
 ### Key:
 - **TN (True Negative):** Correctly predicted as "No Fraud."
 - **FP (False Positive):** Incorrectly flagged as fraud.
@@ -117,6 +123,7 @@ Project4_CodeEnforcers-Fraud-analysis-in-Canada/
 ├── Machine_learning.ipynb      # Data cleaning, model building, and evaluation
 ├── model_evaluation.xlsx       # Actual vs predicted class labels
 ├── Project 4 - Project Proposal.docx  # Project planning document
+├── Project 4 - Code Enforcers Fraud Analysis in Canada.pdf  # Project Presentation
 └── README.md                   # Executive summary and documentation
 
 ---
