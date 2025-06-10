@@ -116,7 +116,7 @@ The dataset includes case-level fraud details with demographic, financial, and g
 
 ## 📁 Project Structure
 
-Project4_CodeEnforcers-Fraud-analysis-in-Canada/
+
 │
 ├── Plot/                                 # Visualizations and charts
 ├── fraud_data.db                         # SQLite database containing cleaned data
@@ -126,6 +126,17 @@ Project4_CodeEnforcers-Fraud-analysis-in-Canada/
 ├── Project 4 - Code Enforcers Fraud Analysis in Canada.pdf  # Final project presentation slides
 └── README.md                             # Executive summary and documentation
 
+## 📁 Project Structure
+
+Project4_CodeEnforcers-Fraud-analysis-in-Canada/
+.
+├── Plot/                                 # Visualizations and charts
+├── fraud_data.db                         # SQLite database
+├── Machine_learning.ipynb                # Data cleaning, model building, and evaluation
+├── model_evaluation.xlsx                 # Model evaluation metrics
+├── Project 4 - Project Proposal.docx     # Initial project planning document
+├── Project 4 - Code Enforcers Fraud Analysis in Canada.pdf  # Final project presentation
+└── README.md                             # Executive summary and project documentation
 ---
 
 ## 🛠️ Installation & Setup
