@@ -86,7 +86,9 @@ The dataset includes case-level fraud details with demographic, financial, and g
 
 ---
 
-<!-- ![Contract Type Churn Rate](./Plot/Contract%20Type%20Churn%20Rate.png)
+![Fraud vs No Fraud Cases](Plot/Fraud vs No Fraud Cases.png)
+
+
 
 Confusion Matrix
 Decision Boundary of Fraud Detection Model
