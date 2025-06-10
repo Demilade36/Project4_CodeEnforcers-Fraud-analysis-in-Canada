@@ -40,31 +40,21 @@ The dataset includes case-level fraud details with demographic, financial, and g
 
 | **Stage**            | **Description**                                                                 | **Tools / Libraries Used** |
 | -------------------- | ------------------------------------------------------------------------------- | -------------------------- |
+| Data Fetching        | Retrieved data via API and managed request timing                               | `urllib`, `time`           |
 | Cleaning & Filtering | Removed missing values; filtered data for Canada-only                           | `pandas`, `numpy`          |
 | Encoding             | Applied label encoding to categorical features for model compatibility          | `scikit-learn`             |
 | Database             | Used SQLite3 for data querying and storage                                      | `sqlite3`, `json`          |
+| Visualization        | Created bar charts, pie charts, and trend visuals to illustrate key patterns    | `matplotlib`               |
 | Modeling             | Random Forest and K-Nearest Neighbors (KNN) classifiers                         | `scikit-learn`             |
 | Evaluation           | Measured performance using Accuracy, Precision, Recall, and F1 Score            | `scikit-learn`             |
-| Visualization        | Created bar charts, pie charts, and trend visuals to illustrate key patterns    | `matplotlib`               |
-| Data Fetching        | Retrieved data via API and managed request timing                               | `urllib`, `time`           |
-
----
-## 📊 Visualization
-
-![Fraud vs No Fraud Cases](./Plot/Fraud%20vs%20No%20Fraud%20Cases.png)
-
-**Note** :  Other visualizations are in the plot folder and also in the presentation slides
 
 ---
 
 ## 🎯 Key Findings  
+  <img src="./Plot/Fraud%20vs%20No%20Fraud%20Cases.png" alt="Fraud vs No Fraud Cases" width="400"/>
 
-- **Top Provinces for Fraud:** Ontario, Quebec, British Columbia  
-- **Fraud Types with Top Dollar Loss :**  Investment scams, Romance scams, and Spear Phishing   
-- **High-Risk Age Groups:** 20-29, 30–39 and 60–69 were among the most targeted  
 
 ### 💰 Financial Impact Trends:
-
 | Year | Reported Fraud Loss |
 |------|----------------------|
 | 2021 | $388 million         |
@@ -72,10 +62,13 @@ The dataset includes case-level fraud details with demographic, financial, and g
 | 2023 | $577 million         |
 | 2024 | $647 million         |
 
+**Top Provinces for Fraud:**   Ontario, Quebec, British Columbia  
+**Fraud Types with Top Dollar Loss :**   Investment scams, Romance scams, and Spear Phishing   
+**High-Risk Age Groups:**   20-29, 30–39 and 60–69 were among the most targeted  
+
 ---
 
 ## ✅ Model Performance: 
-
 
 | Metric       | Random Forest        |               | KNN                  |               |
 |--------------|----------------------|---------------|----------------------|---------------|
@@ -85,16 +78,19 @@ The dataset includes case-level fraud details with demographic, financial, and g
 | **F1 Score** | 0.82                 | 0.91          | 0.80                 | 0.90          |
 | **Accuracy** | 0.88                 |               | 0.87
 
----
+### 🧮 Confusion Matrix :
 
-## 🧑‍💼 Stakeholder Impact
+| Prediction \ Actual | No Fraud (0) | Fraud (1)   |   | Prediction \ Actual | No Fraud (0) | Fraud (1)   |
+| ------------------- | ------------ | ----------- | - | ------------------- | ------------ | ----------- |
+| **Random Forest**   |              |             |   | **KNN (K=15)**      |              |             |
+| **No Fraud (0)**    | 13,762 (TN)  |  2,018 (FP) |   | **No Fraud (0)**    | 13,280 (TN)  |  2,500 (FP) |
+| **Fraud (1)**       |  3,959 (FN)  | 30,077 (TP) |   | **Fraud (1)**       |  4,090 (FN)  | 29,946 (TP) |
 
-| Stakeholder         | Impact                                                                 |
-|---------------------|------------------------------------------------------------------------|
-| Law Enforcement     | Identify fraud hotspots and enhance preventive actions                  |
-| Financial Institutions | Enhance fraud risk scoring and alert systems                      |
-| Public & Media      | Inform campaigns based on fraud type, method, and geography            |
-| Policy Makers       | Use data to allocate resources and design education initiatives        |
+### Key:
+- **TN (True Negative):** Correctly predicted as "No Fraud."
+- **FP (False Positive):** Incorrectly flagged as fraud.
+- **FN (False Negative):** Fraud cases missed.
+- **TP (True Positive):** Correctly identified as fraud.
 ---
 
 ## 📁 Project Structure
@@ -142,6 +138,16 @@ pip install pandas numpy matplotlib scikit-learn
 * No personal identifiers included
 * Data used solely for public interest, research, and education
 * Respect for data privacy and contextual sensitivity around victimization
+---
+
+## 🧑‍💼 Stakeholder Impact
+
+| Stakeholder         | Impact                                                                 |
+|---------------------|------------------------------------------------------------------------|
+| Law Enforcement     | Identify fraud hotspots and enhance preventive actions                  |
+| Financial Institutions | Enhance fraud risk scoring and alert systems                      |
+| Public & Media      | Inform campaigns based on fraud type, method, and geography            |
+| Policy Makers       | Use data to allocate resources and design education initiatives        |
 ---
 
 ## 📚 References
