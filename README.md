@@ -58,7 +58,7 @@ The dataset includes case-level fraud details with demographic, financial, and g
   <img src="./Plot/Victims%20by%20Province.png" alt="Victims by Province" width="400"/>
 
 ### Victims of Fraud by Age range
-  <img src="./Plot/Victims%20by%20Age%Range.png" alt="Victims by Age Range" width="400"/>
+  <img src="./Plot/Victims%20by%20Age%20Range.png" alt="Victims by Age Range" width="400"/>
 
 
 ### 💰 Financial Impact Trends:
