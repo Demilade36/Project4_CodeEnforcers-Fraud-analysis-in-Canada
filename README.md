@@ -83,10 +83,7 @@ The dataset includes case-level fraud details with demographic, financial, and g
 ---
 
 ## 📊 Visualizations
-
----
-
-![Fraud vs No Fraud Cases](Plot/Fraud vs No Fraud Cases.png)
+![Fraud vs No Fraud Cases](Plot/Fraud%20vs%20No%20Fraud%20Cases.png)
 
 
 
