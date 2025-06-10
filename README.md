@@ -77,7 +77,7 @@ The dataset includes case-level fraud details with demographic, financial, and g
 
 ## ✅ Model Performance: 
 
-| Metric       | Random Forest        |               | KNN                  |               |
+| Metric       | Random Forest        |               | KNN (K = 15)         |               |
 |--------------|----------------------|---------------|----------------------|---------------|
 |              | No Fraud (0)         | Fraud (1)     | No Fraud (0)         | Fraud (1)     |
 | **Precision**| 0.78                 | 0.94          | 0.76                 | 0.92          |
@@ -98,6 +98,14 @@ The dataset includes case-level fraud details with demographic, financial, and g
 - **FP (False Positive):** Incorrectly flagged as fraud.
 - **FN (False Negative):** Fraud cases missed.
 - **TP (True Positive):** Correctly identified as fraud.
+
+### Insights: 
+- **Random Forest** outperforms KNN in **precision**, especially in detecting fraud (0.94 vs. 0.92).
+- **Recall** values are similar for both models, but Random Forest slightly edges out in identifying non-fraud cases.
+- **F1 Score** and **overall accuracy** show Random Forest performing slightly better (**0.88 vs. 0.87**).
+- **Confusion matrix** suggests Random Forest makes fewer false fraud classifications.
+- Random Forest appears to be a more **balanced model** for fraud detection, achieving **higher precision** while maintaining competitive recall and accuracy compared to KNN.
+
 ---
 
 ## 📁 Project Structure
