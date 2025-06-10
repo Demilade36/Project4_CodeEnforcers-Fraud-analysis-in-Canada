@@ -183,6 +183,6 @@ pip install pandas numpy matplotlib scikit-learn
 * **Oludemilade Adenuga** – model development, metric analysis, and documentation
 * **Geraldine Valencia** – visualization, data evaluation, and documentation
 ---
-## License
+## 🏛️ License
 This project is licensed under the **Open Government Licence - Canada**.  
 For more details, see: [Open Government Licence - Canada](https://open.canada.ca/en/open-government-licence-canada).
