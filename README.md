@@ -22,28 +22,24 @@ This project leverages **machine learning** to classify fraud vs. non-fraud case
 
 ---
 
-## 📊 Project Overview  
+## 📊 Project Objective
 
-We trained classification models using cleaned and labeled fraud records.:
+- Train the model to know when there is Fraud or No Fraud. No Fraud includes an attempt, other or unknown. As code enforcers, we assumed these three categories as 'No Fraud'. We included Optimization of the KNN model.
 
-- 🔹 **Fraud Classification**  
-  Predict whether a report represents fraud (1) or non-fraud (0), based on categorical and numeric indicators.
+- **Additional:** Decided to build a predictive interactive model for users. This model is running on victims only that reported fraud in Canada and will tell the user a situation where there is a possiblity of financial loss.
 
-- 🔹 **Additional**  
-  Focus on confirmed fraud reports and predict whether a victim lost money (1) or did not (0).
-
-All data operations are supported by **SQLite3**, visualized with **Matplotlib**, and modeled using **scikit-learn** tools.
+   All data operations are supported by **SQLite3**, visualized with **Matplotlib**, and modeled using **scikit-learn** tools.
 
 ---
 
-## 🌐 Data Source Access/Overview
+## 🌐 Data Source Access 
 
-Retrieved fraud report data directly from the [Canada’s Open Government Portal-Canadian Anti-Fraud Centre Fraud Reporting System](https://open.canada.ca/data/en/dataset/6a09c998-cddb-4a22-beff-4dca67ab892f) using their public API.
+Retrieved fraud report data directly from the [Canada’s Open Government Portal-Canadian Anti-Fraud Centre Fraud Reporting Data (2021-2025)](https://open.canada.ca/data/en/dataset/6a09c998-cddb-4a22-beff-4dca67ab892f) using their public API.
 
 
-### 🗃️ Dataset Overview  
+### 🗃️ Dataset  Overview
+**Source :** Retrieved fraud report data directly from the [Canada’s Open Government Portal-Canadian Anti-Fraud Centre Fraud Reporting Data (2021-2025)](https://open.canada.ca/data/en/dataset/6a09c998-cddb-4a22-beff-4dca67ab892f) using their public API.
 
-**📁 Source:** Canadian Anti-Fraud Centre Reporting Data (2021–2025)  
 The dataset includes case-level fraud details with demographic, financial, and geographic attributes.
 
 | Feature              | Description                                                       |
@@ -56,46 +52,45 @@ The dataset includes case-level fraud details with demographic, financial, and g
 | `Victim Age Range`   | Age group (e.g., 20–29, 30-39, 60-69)                             |
 | `Fraud Category`     | Scam type: investment, merchandise, romance, etc.                |
 | `Solicitation Method`| Contact method: phone, email, social media, etc.                 |
-| `Number of Victims`  | 1 = Victim, 0 = Non-victim                                        |
+| `Number of Victims`  | 1 = Victim, 0 = Non-victim (used as the target column)            |
 | `Dollar Loss`        | Reported financial loss (if any)                                  |
 
 
 ## ⚙️ Methodology & Tools  
 
-| Stage               | Description                                                      |
-|---------------------|------------------------------------------------------------------|
-| Cleaning & Filtering| Removed missing values, filtered for Canada-only                |
-| Encoding            | Label encoding for model-ready categorical features             |
-| Database            | SQLite3 used for querying and storage                           |
-| Modeling            | Random Forest & K-Nearest Neighbors (KNN) classifiers           |
-| Visualization       | Used Matplotlib for bar charts, pie charts and trend visuals   |
-| Evaluation          | Metrics include Accuracy, Precision, Recall, and F1 Score       |
+| Stage               | Description                                                          |
+|---------------------|----------------------------------------------------------------------|
+| Cleaning & Filtering| Removed missing values, filtered for Canada-only                     |
+| Encoding            | Label encoding for model-ready categorical features                  |
+| Database            | SQLite3 used for querying and storage                                |
+| Modeling            | Scikit-learn (Random Forest & K-Nearest Neighbors (KNN) classifiers) |
+| Visualization       | Used Matplotlib for bar charts, pie charts and trend visuals         |
+| Evaluation          | Metrics include Accuracy, Precision, Recall, and F1 Score            |
 
 ---
 
 ## 🎯 Key Findings  
 
 - **Top Provinces for Fraud:** Ontario, Quebec, British Columbia  
-- **Common Fraud Types:** Merchandise fraud, Investment scams, Identity theft  
+- **Common Fraud Types:**  Investment scams, Romance scams, adn Spear Phishing   
 - **High-Risk Age Groups:** 30–39 and 60–69 were among the most targeted  
 
 ### 💰 Financial Impact Trends:
 
 | Year | Reported Fraud Loss |
 |------|----------------------|
-| 2021 | $383 million         |
-| 2022 | $530 million         |
-| 2023 | $569 million         |
-| 2024 | $638 million         |
+| 2021 | $388 million         |
+| 2022 | $533 million         |
+| 2023 | $577 million         |
+| 2024 | $647 million         |
 
 ---
 
 ## 📊 Visualizations
 
 ---
-<!-- ![Contract Type Churn Rate](https://github.com/Eder-2024/Project_1-Telco/blob/main/Plot/Contract%20Type%20Churn%20Rate.png)
-<!-- **H1: Fraud Victimization Peaks Among Adults Aged 30–39 (Accepted)**
-![Contract Type Churn Rate](./Plot/Contract%20Type%20Churn%20Rate.png)
+
+<!-- ![Contract Type Churn Rate](./Plot/Contract%20Type%20Churn%20Rate.png)
 
 Confusion Matrix
 Decision Boundary of Fraud Detection Model
@@ -105,7 +100,7 @@ Decision Boundary of Fraud Detection Model
 ![Fraud Loss by Age Group – Box Plot](https
 Decision Boundary of Fraud Detection Model://github.com/your-username/your-repo/blob/main/visuals/Loss_by_Age_Group.png) -->
 
-![Victim Count by Year and Age – Trend Line](https://github.com/your-username/your-repo/blob/main/visuals/Victims_Trend_by_Age.png)
+![Victim Count by Year and Age – Trend Line](https://github.com/your-username/your-repo/blob/main/visuals/Victims_Trend_by_Age.png) -->
 
 ---
 
@@ -209,6 +204,24 @@ pip install pandas numpy matplotlib scikit-learn
 * **scikit-learn Documentation:** [https://scikit-learn.org](https://scikit-learn.org)
 * **Matplotlib Documentation:** [https://matplotlib.org](https://matplotlib.org)
 * **SQLite3 Documentation:** [Python SQLite3 Module](https://docs.python.org/3/library/sqlite3.html)
+
+
+
+
+* **Data Source:** [Canadian Anti-Fraud Centre – Open Canada](https://open.canada.ca/data/en/dataset/6a09c998-cddb-4a22-beff-4dca67ab892f)
+* **scikit-learn Documentation:** [https://scikit-learn.org](https://scikit-learn.org)
+* **Matplotlib Documentation:** [https://matplotlib.org](https://matplotlib.org)
+* **pandas Documentation:** [https://pandas.pydata.org](https://pandas.pydata.org)
+* **NumPy Documentation:** [https://numpy.org](https://numpy.org)
+* **SQLite3 Documentation:** [https://docs.python.org/3/library/sqlite3.html](https://docs.python.org/3/library/sqlite3.html)
+* **JSON Module:** [https://docs.python.org/3/library/json.html](https://docs.python.org/3/library/json.html)
+* **urllib Module:** [https://docs.python.org/3/library/urllib.html](https://docs.python.org/3/library/urllib.html)
+* **time Module:** [https://docs.python.org/3/library/time.html](https://docs.python.org/3/library/time.html)
+```
+
+Let me know if you'd like to include your GitHub repo or API usage examples as well.
+
+Let me know if you’d like to add API-specific references (e.g., a sample URL or code snippet for fetching fraud data).
 
 ---
 

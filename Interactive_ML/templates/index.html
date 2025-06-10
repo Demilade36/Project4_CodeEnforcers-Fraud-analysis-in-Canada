@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Fraud Prediction System</h1>
+
+    <form action="/" method="POST">
+    <!-- Province Dropdown -->
+    <label for="province">Province/State:</label>
+    <select name="Province/State" required>
+        <option value="Alberta">Alberta</option>
+        <option value="British Columbia">British Columbia</option>
+        <option value="Manitoba">Manitoba</option>
+        <option value="New Brunswick">New Brunswick</option>
+        <option value="Newfoundland And Labrador">Newfoundland And Labrador</option>
+        <option value="North West Territories">North West Territories</option>
+        <option value="Not Specified">Not Specified</option>
+        <option value="Nova Scotia">Nova Scotia</option>
+        <option value="Nunavut">Nunavut</option>
+        <option value="Ontario">Ontario</option>
+        <option value="Prince Edward Island">Prince Edward Island</option>
+        <option value="Quebec">Quebec</option>
+        <option value="Saskatchewan">Saskatchewan</option>
+        <option value="Yukon">Yukon</option>
+    </select>
+
+    <!-- Complaint Dropdown -->
+    <label for="complaint">Complaint Type:</label>
+    <select name="Complaint Received Type" required>
+        <option value="CAFC Website">CAFC Website</option>
+        <option value="NCFRS">NCFRS</option>
+        <option value="Email">Email</option>
+        <option value="Phone">Phone</option>
+        <option value="Mail">Mail</option>
+        <option value="Unknown">Unknown</option>
+        <option value="In Person">In Person</option>
+        <option value="Other">Other</option>
+        <option value="Intercepted">Intercepted</option>
+        <option value="Message">Message</option>
+    </select>
+
+    <!-- Fraud Category Dropdown -->
+    <label for="category">Fraud Category:</label>
+    <select name="Fraud and Cybercrime Thematic Categories" required>
+        <option value="Identity Fraud">Identity Fraud</option>
+        <option value="Phishing">Phishing</option>
+        <option value="Merchandise">Merchandise</option>
+        <option value="Vendor Fraud">Vendor Fraud</option>
+        <option value="Spear Phishing">Spear Phishing</option>
+        <option value="Extortion">Extortion</option>
+        <option value="Emergency">Emergency (Jail, Accident, Hospital, Help)</option>
+        <option value="Job">Job</option>
+        <option value="Personal Info">Personal Info</option>
+        <option value="Counterfeit Merchandise">Counterfeit Merchandise</option>
+        <option value="Service">Service</option>
+        <option value="Prize">Prize</option>
+        <option value="Bank Investigator">Bank Investigator</option>
+        <option value="Investments">Investments</option>
+        <option value="Romance">Romance</option>
+        <option value="Other">Other</option>
+        <option value="Loan">Loan</option>
+        <option value="Unknown">Unknown</option>
+        <option value="Unauthorized Charge">Unauthorized Charge</option>
+        <option value="Timeshare">Timeshare</option>
+        <option value="Grant">GRANT</option>
+        <option value="Charity">Charity / Donation</option>
+        <option value="Vacation">Vacation</option>
+        <option value="Foreign Money Offer">Foreign Money Offer</option>
+        <option value="Recovery Pitch">Recovery Pitch</option>
+        <option value="Fraudulent Cheque">Fraudulent Cheque</option>
+        <option value="Health">Health</option>
+        <option value="Spoofing">Spoofing</option>
+        <option value="False Billing">False Billing</option>
+        <option value="Pyramid">Pyramid</option>
+        <option value="Collection Agency">Collection Agency</option>
+        <option value="Psychics">Psychics</option>
+        <option value="Survey">Survey</option>
+        <option value="Directory">Directory</option>
+        <option value="Incomplete">Incomplete</option>
+        <option value="Modem-Hijacking">Modem-Hijacking</option>
+        <option value="Telecom Fraud">Telecom Fraud</option>
+        <option value="Credit Card">Credit Card</option>
+    </select>
+
+    <!-- Solicitation Method Dropdown -->
+    <label for="solicitation">Solicitation Method:</label>
+    <select name="Solicitation Method" required>
+        <option value="Other/unknown">Other/unknown</option>
+        <option value="Email">Email</option>
+        <option value="Text message">Text message</option>
+        <option value="Internet-social network">Internet-social network</option>
+        <option value="Internet">Internet</option>
+        <option value="Direct call">Direct call</option>
+        <option value="Door to door/in person">Door to door/in person</option>
+        <option value="Mail">Mail</option>
+        <option value="Not Available">Not Available</option>
+        <option value="Print">Print</option>
+        <option value="Fax">Fax</option>
+        <option value="Video Call">Video Call</option>
+        <option value="Television">Television</option>
+        <option value="Radio">Radio</option>
+    </select>
+
+    <!-- Gender Dropdown -->
+    <label for="gender">Gender:</label>
+    <select name="Gender" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Unknown">Unknown</option>
+        <option value="Not Available">Not Available</option>
+        <option value="Prefer not to say">Prefer not to say</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <!-- Language Dropdown -->
+    <label for="language">Language:</label>
+    <select name="Language of Correspondence" required>
+        <option value="French">French</option>
+        <option value="English">English</option>
+        <option value="Not Available">Not Available</option>
+    </select>
+
+    <!-- Victim Age Range Dropdown -->
+    <label for="age">Victim Age Range:</label>
+    <select name="Victim Age Range" required>
+        <option value="'40 - 49">'40 - 49</option>
+        <option value="'30 - 39">'30 - 39</option>
+        <option value="'60 - 69">'60 - 69</option>
+        <option value="'70 - 79">'70 - 79</option>
+        <option value="'10 - 19">'10 - 19</option>
+        <option value="'20 - 29">'20 - 29</option>
+        <option value="'Not Available">'Not Available / non disponible</option>
+        <option value="'50 - 59">'50 - 59</option>
+        <option value="'80 - 89">'80 - 89</option>
+        <option value="'1 - 9">'1 - 9</option>
+        <option value="'Deceased">'Deceased / Décédé</option>
+        <option value="'90 - 99">'90 - 99</option>
+        <option value="'100 +">'100 +</option>
+        <option value="'Business">'Business / Entreprise</option>
+    </select>
+
+    <button type="submit">Predict</button>
+</form>
+
+    {% if prediction is not none %}
+        <h2>Prediction Result: {% if prediction == 1 %}💰 Money Loss Likely {% else %}✅ No Money Loss{% endif %}</h2>
+    {% endif %}
+
+    <h3>Select a Graph to View:</h3>
+    <select id="graphSelector">
+        <option value="distribution">Fraud Distribution</option>
+        <option value="feature_importance">Feature Importance</option>
+        <option value="pca">PCA Visualization</option>
+        <option value="confusion_matrix">Confusion Matrix</option>
+    </select>
+
+    <div id="graphDisplay">
+        <img id="graphImage" src="/static/distribution.png" alt="Graph">
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
